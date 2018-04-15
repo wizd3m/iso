@@ -1,9 +1,9 @@
 {
-    "name": "pop-distro",
+    "name": "rareos-distro",
     "base": "ubuntu-daily:17.10",
     "privileged": true,
     "prepare": [
-        ["add-apt-repository", "-y", "ppa:system76/pop"],
+        ["add-apt-repository", "-y", "ppa:rareos/ppa"],
         ["apt-get", "update"],
         ["apt-get", "install", "-y", "debootstrap", "make", "ovmf", "qemu-efi", "qemu-kvm", "squashfs-tools", "xorriso", "zsync"]
     ],
@@ -11,6 +11,6 @@
         ["bash", "-c", "cd source && ./buildchain.sh"]
     ],
     "publish": [
-        ["mv", "source/build/17.10/pop-os.tar", "artifacts"]
+        ["mv", "source/build/17.10/rareos.tar", "artifacts"]
     ]
 }

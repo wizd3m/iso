@@ -3,8 +3,8 @@ DISTRO_VERSION?=17.10
 DISTRO_EPOCH?=$(shell date +%s)
 DISTRO_DATE?=$(shell date +%Y%m%d)
 
-DISTRO_NAME=Pop_OS
-DISTRO_CODE=pop-os
+DISTRO_NAME=rareOS
+DISTRO_CODE=rareos
 
 ISO_NAME?=$(DISTRO_CODE)
 
@@ -25,7 +25,7 @@ include mk/language.mk
 # Repositories to be present in installed system
 DISTRO_REPOS=\
 	$(UBUNTU_REPOS) \
-	ppa:system76/pop
+	ppa:rareos/ppa
 
 ifeq ($(PROPOSED),1)
 DISTRO_REPOS+=\
@@ -38,7 +38,7 @@ DISTRO_PKGS=\
 	linux-signed-generic \
 	ubuntu-minimal \
 	ubuntu-standard \
-	pop-desktop \
+	rareos-desktop \
 	$(LANGUAGE_PKGS)
 
 ifeq ($(NVIDIA),1)
