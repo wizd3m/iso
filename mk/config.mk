@@ -27,11 +27,6 @@ DISTRO_REPOS=\
 	$(UBUNTU_REPOS) \
 	ppa:rareos/ppa
 
-ifeq ($(PROPOSED),1)
-DISTRO_REPOS+=\
-	ppa:system76/proposed
-endif
-
 # Packages to install
 DISTRO_PKGS=\
 	linux-generic \
@@ -43,7 +38,7 @@ DISTRO_PKGS=\
 
 ifeq ($(NVIDIA),1)
 DISTRO_PKGS+=\
-	nvidia-384
+	nvidia-390
 endif
 
 # Packages to have in live instance
@@ -56,7 +51,7 @@ LIVE_PKGS=\
 	mtools \
 	reiserfsprogs \
 	ubiquity-frontend-gtk \
-	ubiquity-slideshow-pop \
+	ubiquity-slideshow-rareos \
 	xfsprogs
 
 # Packages to remove from installed system (usually installed as Recommends)
